@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.6'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'devise'
+
+gem 'haml'
 
 group :development, :test do
   gem 'faker'

@@ -1,0 +1,17 @@
+%h1 Список пользователей
+%table
+  %tr
+    %th Логин
+    %th E-mail
+    %th Имя
+    %th Фамилия
+    %th День рождение
+    %th{:colspan => "2"}
+  - @users.each do |user|
+    %tr
+      %td= user.login
+      %td= user.email
+      %td= user.first_name
+      %td= user.last_name
+      %td= user.birthday
+      %td= link_to 'Посмотреть', user_path(user)

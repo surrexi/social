@@ -1,0 +1,21 @@
+%h1 Обновление профиля:
+= form_for @user do |f|
+  %p
+    = f.label :login
+    %br
+      = f.text_field :login
+  %p
+    = f.label :first_name
+    %br
+      = f.text_field :first_name
+  %p
+    = f.label :last_name
+    %br
+      = f.text_field :last_name
+  %p
+    = f.label :birthday
+    %br
+      = f.text_field :birthday
+  %p
+    = f.submit
+= link_to 'Назад', users_path

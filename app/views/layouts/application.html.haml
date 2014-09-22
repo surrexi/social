@@ -14,7 +14,7 @@
           %li.active
             %a{:href => "/"} Главная
           %li
-            = link_to 'Пользователи', controller: 'users'
+            = link_to 'Пользователи', users_path
         %ul.nav.navbar-nav.navbar-right
           - if user_signed_in?
             %li= link_to 'Выйти', destroy_user_session_path, method: :delete

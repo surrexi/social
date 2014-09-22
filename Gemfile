@@ -26,6 +26,8 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'haml'
+
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'

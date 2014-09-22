@@ -1,14 +1,12 @@
 default: &default
-adapter: postgresql
-encoding: unicode
-# For details on connection pooling, see rails configuration guide
-# http://guides.rubyonrails.org/configuring.html#databa..
-pool: 5
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
 development:
-«: *default
-database: social_development
+  <<: *default
+  database: social_development
 
 test:
-«: *default
-database: social_test
+  <<: *default
+  database: social_test

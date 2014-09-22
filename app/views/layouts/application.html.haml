@@ -10,9 +10,9 @@
       .container-fluid
         %ul.nav.navbar-nav
           %li
-            %a.navbar-brand{:href => "http://evrone.ru/"} Evrone School
+            %a.navbar-brand{:href => "http://vk.com/damir94777"} Vkontakte
           %li.active
-            %a{:href => "/"} Главная
+            = link_to 'Главная', root_path
           %li
             = link_to 'Пользователи', users_path
         %ul.nav.navbar-nav.navbar-right

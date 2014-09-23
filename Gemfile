@@ -24,7 +24,9 @@ gem 'devise'
 
 gem 'haml'
 
-gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+gem 'ransack'
+
+gem 'cancancan'
 
 group :development, :test do
   gem 'faker'

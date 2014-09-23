@@ -24,6 +24,8 @@ gem 'devise'
 
 gem 'haml'
 
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @search = User.search(params[:q])
+    @users = @search.result
   end
 
   def show
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
 
   def user_params

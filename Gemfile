@@ -24,6 +24,10 @@ gem 'devise'
 
 gem 'haml'
 
+gem 'ransack'
+
+gem 'cancancan'
+
 group :development, :test do
   gem 'faker'
   gem 'rspec-rails'

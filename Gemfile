@@ -28,8 +28,10 @@ gem 'ransack'
 
 gem 'cancancan'
 
-group :development, :test do
+group :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end

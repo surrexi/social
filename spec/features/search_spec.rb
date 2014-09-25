@@ -6,7 +6,7 @@ describe "the search process" do
     visit users_path
     within('#user_search') do
       fill_in 'q_email_or_last_name_or_first_name_cont', with: 'user@example.com'
-      click_button 'Search'
+      click_button I18n.t 'users.index.search'
     end
     expect(page).to have_content 'user@example.com'
   end

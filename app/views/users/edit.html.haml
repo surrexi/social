@@ -1,21 +1,26 @@
-%h1 Обновление профиля:
+%h2
+  %strong
+    = t '.title'
 = form_for @user do |f|
   %p
-    = f.label :login
+    = f.label t '.login'
     %br
       = f.text_field :login
   %p
-    = f.label :first_name
+    = f.label t '.surname'
     %br
       = f.text_field :first_name
   %p
-    = f.label :last_name
+    = f.label t '.name'
     %br
       = f.text_field :last_name
   %p
-    = f.label :birthday
+    = f.label t '.birthday'
     %br
       = f.text_field :birthday
   %p
-    = f.submit
-= link_to 'Назад', users_path
+    = f.label t '.locale'
+    = f.select(:locale, ['ru', 'en'])
+  %p
+    = f.submit t '.update'
+= link_to t('.back'), users_path

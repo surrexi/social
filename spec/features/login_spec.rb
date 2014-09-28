@@ -5,6 +5,6 @@ describe "the signin process" do
 
   it "login" do
     auth user
-    expect(page).to have_content 'Выйти'
+    expect(page).to have_link I18n.t 'logout'
   end
 end

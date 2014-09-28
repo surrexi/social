@@ -1,0 +1,35 @@
+ru:
+  home: Главная
+  members: Пользователи
+  profile: Профиль
+  login: Войти
+  logout: Выйти
+  register: Регистрация
+  welcome:
+    index:
+      title: Это социальная сеть
+  users:
+    index:
+      email: Электронная почта
+      title: Список пользователей
+      search: Поиск
+      login: Ник
+      surname: Фамилия
+      name: Имя
+      birthday: День Рождения
+    show:
+      title: "Профиль пользователя: %{login}"
+      surname: Фамилия
+      name: Имя
+      birthday: День Рождения
+      back: Назад
+      update: Обновить
+    edit:
+      title: 'Обновление профиля:'
+      login: Ник
+      surname: Фамилия
+      name: Имя
+      birthday: День Рождения
+      locale: Выберите язык интерфейса
+      back: Назад
+      update: Обновить

@@ -8,9 +8,10 @@ describe "the process update" do
   it "update own profile" do
     auth user2
     visit edit_user_path(user2)
+
     within("#edit_user_#{ user2.id }") do
-      fill_in 'First name', with: 'Симпсон'
-      click_button 'Update User'
+      fill_in 'user_first_name', with: 'Симпсон'
+      click_button I18n.t 'users.edit.update'
     end
     expect(page).to have_content 'Симпсон'
   end
@@ -18,5 +19,6 @@ describe "the process update" do
   it "update of another profile" do
     auth user2
     visit edit_user_path(user3)
+    expect(current_path).to eq(root_path)
   end
 end

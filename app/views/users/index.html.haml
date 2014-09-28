@@ -1,20 +1,23 @@
-%h1 Список пользователей
-= search_form_for @search do |f|
-  = f.search_field :email_or_last_name_or_first_name_cont
-  = f.submit
-%table
-  %tr
-    %th Логин
-    %th E-mail
-    %th Имя
-    %th Фамилия
-    %th День рождение
-    %th{:colspan => "2"}
-  - @users.each do |user|
+= search_form_for @search, class: 'navbar-form navbar-right' do |f|
+  .form-group
+    = f.search_field :email_or_last_name_or_first_name_cont, class: 'form-control', placeholder: 'Search'
+  = f.submit t('.search'), class: 'btn btn-default'
+%h2
+  = t '.title'
+
+%table.table.table-hover
+  %thead
     %tr
-      %td= user.login
-      %td= user.email
-      %td= user.first_name
-      %td= user.last_name
-      %td= user.birthday
-      %td= link_to 'Посмотреть', user_path(user)
+      %th= t '.email'
+      %th= t '.login'
+      %th= t '.surname'
+      %th= t '.name'
+      %th= t '.birthday'
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.email, user_path(user)
+        %td= user.login
+        %td= user.first_name
+        %td= user.last_name
+        %td= user.birthday

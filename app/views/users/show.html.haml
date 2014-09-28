@@ -1,17 +1,18 @@
+%h2
+  %strong
+    = t '.title', login: @user.login
+%br
 %p
-  %strong Логин:
-  = @user.login
-%p
-  %strong E-mail:
-  = @user.email
-%p
-  %strong Имя:
+  %strong
+    = t '.surname'
   = @user.first_name
 %p
-  %strong Фамилия:
+  %strong
+    = t '.name'
   = @user.last_name
 %p
-  %strong День рождение:
+  %strong
+    = t '.birthday'
   = @user.birthday
-= link_to 'Назад', users_path
-= link_to 'Обновить', edit_user_path(@user)
+= link_to t('.back'), users_path
+= link_to t('.update'), edit_user_path(@user)

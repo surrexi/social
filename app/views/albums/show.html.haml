@@ -1,0 +1,14 @@
+.page-header
+  %h2
+    = @album.title
+    %small
+      = @album.description
+- if can? :manage, @album
+  .page-header
+    %h2
+      = t '.add_photo'
+      %p
+        = render 'photos/form'
+
+.row
+  = render @album.photos

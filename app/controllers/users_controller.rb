@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  respond_to :html
+
   def index
     @search = User.search(params[:q])
     @users = @search.result
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
@@ -14,17 +15,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
-    else
-      render 'edit'
-    end
+    @user.update(user_params)
+    respond_with(@user)
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to users_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:login, :first_name, :last_name, :birthday, :locale)
+    params.require(:user).permit(:login, :first_name, :last_name, :birthday, :locale, :avatar, :remove_avatar)
   end
 end

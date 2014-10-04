@@ -8,6 +8,7 @@
 %table.table.table-hover
   %thead
     %tr
+      %th
       %th= t '.email'
       %th= t '.login'
       %th= t '.surname'
@@ -16,6 +17,7 @@
   %tbody
     - @users.each do |user|
       %tr
+        %td= image_tag(user.avatar_url, width: 100, height: 100)
         %td= link_to user.email, user_path(user)
         %td= user.login
         %td= user.first_name

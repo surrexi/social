@@ -1,0 +1,9 @@
+-if photo.image?
+  .col-md-4.col-xs-6
+    .thumbnail
+      - if can? :manage, photo
+        %p.text-right
+          = link_to '', [photo.album, photo], class: 'glyphicon glyphicon-edit'
+          = link_to '', [photo.album, photo], class: 'glyphicon glyphicon-remove',
+          data: { confirm: 'Are you sure?' }, method: :delete
+      = image_tag(photo.image_url, width: 300)

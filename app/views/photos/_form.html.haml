@@ -1,0 +1,4 @@
+.form-inline
+  = form_for([@album, @album.photos.build], html: {multipart: true}) do |f|
+    = f.file_field :image, class: 'form-control'
+    = f.submit t('download'), class: 'btn btn-default'

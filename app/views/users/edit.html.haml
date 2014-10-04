@@ -1,7 +1,15 @@
 %h2
   %strong
     = t '.title'
-= form_for @user do |f|
+= form_for @user, html: {multipart: true} do |f|
+  - if @user.avatar?
+    %p
+      = image_tag(@user.avatar_url, width: 200, height: 200)
+      %br
+        = f.check_box :remove_avatar
+        = t '.remove_avatar'
+  %p
+    = f.file_field :avatar
   %p
     = f.label t '.login'
     %br
@@ -22,5 +30,4 @@
     = f.label t '.locale'
     = f.select(:locale, ['ru', 'en'])
   %p
-    = f.submit t '.update'
-= link_to t('.back'), users_path
+    = f.submit t 'update'

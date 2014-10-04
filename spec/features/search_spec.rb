@@ -3,6 +3,7 @@ describe "the search process" do
   let!(:user) { create :user }
 
   it "search user" do
+    auth user
     visit users_path
     within('#user_search') do
       fill_in 'q_email_or_last_name_or_first_name_cont', with: 'user@example.com'

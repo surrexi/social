@@ -11,7 +11,7 @@ describe "the process update" do
 
     within("#edit_user_#{ user2.id }") do
       fill_in 'user_first_name', with: 'Симпсон'
-      click_button I18n.t 'users.edit.update'
+      click_button I18n.t 'update'
     end
     expect(page).to have_content 'Симпсон'
   end

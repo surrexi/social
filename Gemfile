@@ -28,6 +28,8 @@ gem 'ransack'
 
 gem 'cancancan'
 
+gem 'carrierwave'
+
 group :test do
   gem 'faker'
   gem 'rspec-rails'

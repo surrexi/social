@@ -1,18 +1,43 @@
-%h2
-  %strong
-    = t '.title', login: @user.login
-%br
+.page-header
+  %h1
+    = @user.first_name
+    = @user.last_name
+.row
+  .col-md-3.col-xs-6
+    = image_tag(@user.avatar_url, width: 300, class: 'img-thumbnail')
+  .col-md-4.col-xs-6
+    %h4
+      %strong
+        = t '.login'
+      %i
+        = @user.login
+    %h4
+      %strong
+        = t '.email'
+      %i
+        = @user.email
+    %h4
+      %strong
+        = t '.birthday'
+      %i
+        = @user.birthday
+  - unless @user.albums.empty?
+    .col-md-5.col-xs-6
+      %h3
+        = t '.list_albums'
+        %hr
+        - @user.albums.each do |album|
+          = link_to album.title, album_path(album)
+          %small
+            = album.description
+            %p.text-right
+              - if can? :manage, album
+                = link_to t('edit'), edit_album_path(album), class: 'btn btn-default'
+                = link_to t('delete'), album, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+      %hr
+      - if can? :manage, @user
+        = link_to t('.new_album'), new_album_path, class: 'btn btn-default'
 %p
-  %strong
-    = t '.surname'
-  = @user.first_name
-%p
-  %strong
-    = t '.name'
-  = @user.last_name
-%p
-  %strong
-    = t '.birthday'
-  = @user.birthday
-= link_to t('.back'), users_path
-= link_to t('.update'), edit_user_path(@user)
+- if can? :manage, @user
+  = link_to t('update'), edit_user_path(@user), class: 'btn btn-default'
+  = link_to t('delete'), @user, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }

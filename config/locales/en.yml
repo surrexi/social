@@ -1,10 +1,17 @@
 en:
   home: Home
   members: Users
+  galleries: Albums
   profile: Profile
   login: Sign in
   logout: Sign out
   register: Registration
+  back: Back
+  update: Update
+  show: Show
+  edit: Edit
+  delete: Delete
+  download: Download
   welcome:
     index:
       title: "This is social network"
@@ -17,12 +24,12 @@ en:
       name: Name
       birthday: Birthday
     show:
-      title: "Profile user: %{login}"
+      title: Profile
       surname: 'Surname:'
       name: 'Name:'
       birthday: 'Birthday:'
-      back: Back
-      update: Update
+      email: "Email:"
+      list_albums: Listing albums
     edit:
       title: "Update profile:"
       login: Nick
@@ -30,5 +37,24 @@ en:
       name: Name
       birthday: Birthday
       locale: Select interface language
-      back: Back
-      update: Update
+      remove_avatar: Remove avatar
+  albums:
+    index:
+      title: Albums list
+      name: Title
+      description: Description
+    show:
+      title: Просмотр альбома
+      name: Title
+      description: Description
+    edit:
+      title: Editing album
+      name: Title
+      description: Description
+    new:
+      title: New album
+      name: Title
+      description: Description
+  photo:
+    edit:
+      title: 'Moving photos to their album:'

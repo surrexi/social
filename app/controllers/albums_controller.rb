@@ -1,21 +1,13 @@
 class AlbumsController < ApplicationController
   load_and_authorize_resource
   respond_to :html
+
   def index
     @albums = Album.where(user: current_user)
   end
 
-  def show
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
   def create
-    @album = current_user.albums.create!(album_params)
+    @album = current_user.albums.create(album_params)
     respond_with(@album)
   end
 

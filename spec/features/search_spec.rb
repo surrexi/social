@@ -1,6 +1,6 @@
 require "spec_helper"
 describe "the search process" do
-  let!(:user) { create :user }
+  let!(:user) { create :user, email: 'user@example.com' }
 
   it "search user" do
     auth user

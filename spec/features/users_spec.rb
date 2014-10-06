@@ -2,8 +2,8 @@ require "spec_helper"
 
 describe "the process update" do
   let(:user1) { create :user }
-  let(:user2) { create :user, email: 'bart@gmail.com' }
-  let(:user3) { create :user, email: 'gomer@gmail.com' }
+  let(:user2) { create :user }
+  let(:user3) { create :user }
 
   it "update own profile" do
     auth user2

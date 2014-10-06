@@ -12,6 +12,8 @@ en:
   edit: Edit
   delete: Delete
   download: Download
+  create: Сreate
+  comment: "Commented ..."
   welcome:
     index:
       title: "This is social network"

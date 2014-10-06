@@ -12,6 +12,9 @@ ru:
   edit: Изменить
   delete: Удалить
   download: Загрузить
+  create: Отправить
+  comment: "Комментировать ..."
+  ago: "назад"
   welcome:
     index:
       title: Это социальная сеть
@@ -42,6 +45,9 @@ ru:
       locale: Выберите язык интерфейса
       remove_avatar: Удалить аватар
   albums:
+    form:
+      name: Название альбома
+      description: Описание
     index:
       title: Список альбомов
       name: Название альбома

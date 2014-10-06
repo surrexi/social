@@ -1,18 +1,10 @@
 = form_for(@album) do |f|
-  - if @album.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@album.errors.count, "error")
-        prohibited this album from being saved:
-      %ul
-        - @album.errors.full_messages.each do |message|
-          %li= message
   %p
-    = f.label t 'albums.edit.name'
+    = f.label t '.name'
     %br
     = f.text_field :title
   %p
-    = f.label t 'albums.edit.description'
+    = f.label t '.description'
     %br
     = f.text_area :description
   %p

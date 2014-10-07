@@ -7,13 +7,6 @@ class UsersController < ApplicationController
     @users = @search.result
   end
 
-  def show
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
   def update
     @user.update(user_params)
     respond_with(@user)

@@ -1,6 +1,6 @@
 = search_form_for @search, class: 'navbar-form navbar-right' do |f|
   .form-group
-    = f.search_field :email_or_last_name_or_first_name_cont, class: 'form-control', placeholder: 'Search'
+    = f.search_field :email_or_last_name_or_first_name_cont, class: 'form-control', placeholder: t('.search')
   = f.submit t('.search'), class: 'btn btn-default'
 %h2
   = t '.title'

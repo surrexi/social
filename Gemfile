@@ -16,8 +16,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
-
 gem 'spring',        group: :development
 
 gem 'devise'

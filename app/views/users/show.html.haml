@@ -21,8 +21,8 @@
         = t '.birthday'
       %i
         = @user.birthday
-  - unless @user.albums.empty?
-    .col-md-5.col-xs-6
+  .col-md-5.col-xs-6
+    - unless @user.albums.empty?
       %h3
         = t '.list_albums'
         %hr

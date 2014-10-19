@@ -3,11 +3,10 @@
     - if can? :manage, @photo
       %p.text-right
         = link_to '', edit_album_photo_path(@photo.album, @photo), class: 'glyphicon glyphicon-edit'
-        = link_to '', album_photo_path(@photo.album, @photo), class: 'glyphicon glyphicon-remove',
-        data: { confirm: 'Are you sure?' }, method: :delete
+        = link_to '', album_photo_path(@photo.album, @photo), class: 'glyphicon glyphicon-remove', method: :delete
     = image_tag(@photo.image_url, width: 500)
-
-  = render @photo.comments
+  %comments
+    = render @photo.comments
   .col-md-10.col-md-offset-1
     %p
       = render 'comments/form'

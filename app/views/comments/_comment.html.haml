@@ -1,11 +1,12 @@
-- if can? :manage, comment
-  %p.text-right
-    = link_to '', album_photo_comment_path(comment.photo.album, comment.photo, comment), class: 'glyphicon glyphicon-remove',
-    data: { confirm: 'Are you sure?' }, method: :delete
-%blockquote
-  = comment.body
-  %footer
-    = link_to comment.user.login, comment.user
-    %br
-    = time_ago_in_words(comment.created_at)
-    = t 'ago'
+%div{id: "#{comment.id}"}
+  - if can? :manage, comment
+    %p.text-right
+      = link_to '', album_photo_comment_path(comment.photo.album, comment.photo, comment),
+      method: :delete, class: 'glyphicon glyphicon-remove', remote: true
+  %blockquote
+    = comment.body
+    %footer
+      = link_to comment.user.login, comment.user
+      %br
+      = time_ago_in_words(comment.created_at)
+      = t 'ago'

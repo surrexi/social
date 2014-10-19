@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $(document).on 'ajax:success', '#new_comment', (e, data, status, xhr) ->
+    $(this).find('textarea').val("");
+    $('comments').html(xhr.responseText);
+  $(document).on 'ajax:success', '.glyphicon.glyphicon-remove', (e, data, status, xhr) ->
+    $("##{data.id}").slideUp();

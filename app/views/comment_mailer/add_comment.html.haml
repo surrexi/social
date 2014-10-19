@@ -1,0 +1,6 @@
+%h1
+  Hello,
+  = @user.last_name ? @user.last_name : @user.email
+%p #{@comment.user.email} commented on your photo.
+%p You can follow the #{link_to 'link', @url} and see what (s)he wrote
+%p Thank you for joining us!

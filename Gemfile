@@ -16,8 +16,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
-gem 'spring',        group: :development
-
 gem 'devise'
 
 gem 'haml'
@@ -27,6 +25,13 @@ gem 'ransack'
 gem 'cancancan'
 
 gem 'carrierwave'
+
+gem 'sidekiq'
+
+group :development do
+  gem 'spring'
+  gem 'letter_opener'
+end
 
 group :test do
   gem 'faker'

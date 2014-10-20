@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: postgres
+  password: 123
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: social_development
+
+test:
+  <<: *default
+  database: social_test

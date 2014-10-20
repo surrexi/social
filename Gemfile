@@ -28,6 +28,8 @@ gem 'carrierwave'
 
 gem 'sidekiq'
 
+gem 'public_activity'
+
 group :development do
   gem 'spring'
   gem 'letter_opener'

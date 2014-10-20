@@ -71,4 +71,16 @@ ru:
       title: 'Перемещение фотографии в альбом:'
   comment_mailer:
     add_comment:
-      subject: "Вашу фотографию прокомментировали!"
+      subject: 'Вашу фотографию прокомментировали!'
+  activities:
+    index:
+      title: 'Лента новостей:'
+  public_activity:
+    comment:
+      create:
+        title: прокомментровал эту
+        name: фотографию
+    photo:
+      create:
+        title: добавил новую
+        name: фотографию

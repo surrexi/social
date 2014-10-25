@@ -1,4 +1,7 @@
 class Comment < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked owner: -> (controller, _model) { controller.current_user }
+
   belongs_to :user
   belongs_to :photo
   validates :body, presence: true

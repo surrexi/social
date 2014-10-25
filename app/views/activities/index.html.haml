@@ -1,0 +1,11 @@
+.page-header
+  %h1
+    = t '.title'
+- @activities.each do |activity|
+  - if activity.trackable
+    %blockquote
+      = link_to activity.owner.login || activity.owner.email, activity.owner if activity.owner
+      = render_activity activity
+      %footer
+        = time_ago_in_words(activity.created_at)
+        = t 'ago'

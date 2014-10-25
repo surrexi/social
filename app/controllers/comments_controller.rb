@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @photo.comments.create(comment_params.merge(user: current_user))
-    render @photo.comments
+    render @comment
   end
 
   def destroy

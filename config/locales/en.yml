@@ -62,4 +62,16 @@ en:
       title: 'Moving photos to their album:'
   comment_mailer:
     add_comment:
-      subject: "There was a comment of your photos!"
+      subject: 'There was a comment of your photos!'
+  activities:
+    index:
+      title: "News feed:"
+  public_activity:
+    comment:
+      create:
+        title: commented on his
+        name: photo
+    photo:
+      create:
+        title: created a new
+        name: photo

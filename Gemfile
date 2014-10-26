@@ -30,6 +30,8 @@ gem 'sidekiq'
 
 gem 'public_activity'
 
+gem 'omniauth-facebook'
+
 group :development do
   gem 'spring'
   gem 'letter_opener'

@@ -6,3 +6,14 @@ def auth(user)
     click_button 'Log in'
   end
 end
+
+def mock_auth_hash
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new(
+    provider: 'facebook',
+    uid: '123545',
+    info: OmniAuth::AuthHash::InfoHash.new(
+      email: 'example@gmail.com'
+    )
+  )
+end

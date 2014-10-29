@@ -1,7 +1,7 @@
 User.destroy_all
 Album.destroy_all
 Photo.destroy_all
-
+PublicActivity.enabled = false
 user1 = User.create(email: "natasha@gmail.com", password: "qwerty", login: "Nata",
 first_name: "Селиванова", last_name: "Наталья", birthday: "29.07.1988")
 user2 = User.create(email: "oleg@gmail.com", password: "qwerty", login: "Lider",

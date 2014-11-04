@@ -34,6 +34,8 @@ gem 'omniauth-facebook'
 
 gem 'omniauth-vkontakte'
 
+gem 'acts_as_votable'
+
 group :development do
   gem 'spring'
   gem 'letter_opener'

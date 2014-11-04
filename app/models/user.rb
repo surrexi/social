@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  acts_as_voter
+
   def self.find_for_oauth(auth)
     identity = Identity.find_for_oauth(auth)
     user = identity.user || User.where(email: auth.info.email).first

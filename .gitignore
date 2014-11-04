@@ -17,4 +17,6 @@
 
 /public/uploads
 
-/config/*.yml
+/config/secrets.yml
+/config/secrets.teatro.yml
+/config/database.yml

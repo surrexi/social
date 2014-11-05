@@ -69,6 +69,8 @@ ru:
   photos:
     edit:
       title: 'Перемещение фотографии в альбом:'
+    show:
+      like: Нравится
   comment_mailer:
     add_comment:
       subject: 'Вашу фотографию прокомментировали!'

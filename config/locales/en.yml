@@ -60,6 +60,8 @@ en:
   photo:
     edit:
       title: 'Moving photos to their album:'
+    show:
+      like: Like
   comment_mailer:
     add_comment:
       subject: 'There was a comment of your photos!'

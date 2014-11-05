@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :albums do
     resources :photos do
+      member do
+        put "vote", to: "photos#vote"
+      end
       resources :comments, only: [:create, :destroy]
     end
   end

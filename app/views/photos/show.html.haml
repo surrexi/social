@@ -5,6 +5,11 @@
         = link_to '', edit_album_photo_path(@photo.album, @photo), class: 'glyphicon glyphicon-edit'
         = link_to '', album_photo_path(@photo.album, @photo), class: 'glyphicon glyphicon-remove', method: :delete
     = image_tag(@photo.image_url, width: 500)
+    .col-md-offset-10
+      = link_to t('.like'), vote_album_photo_path(@album, @photo), class: 'vote_link', method: :put, remote: true
+      .badge
+        = @photo.get_likes.size
+
   %comments
     = render @photo.comments
   .col-md-10.col-md-offset-1

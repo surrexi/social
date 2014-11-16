@@ -6,6 +6,7 @@ class Photo < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :album
+  belongs_to :wall
   has_many :comments, dependent: :destroy
 
   mount_uploader :image, PhotoUploader

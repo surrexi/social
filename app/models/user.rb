@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_many :albums, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :sent, class_name: 'Wall', foreign_key: 'sender_id'
+  has_many :received, class_name: 'Wall', foreign_key: 'owner_id'
   has_many :identities, dependent: :destroy
 
   devise :database_authenticatable, :registerable, :omniauthable,

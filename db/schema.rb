@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104064150) do
+ActiveRecord::Schema.define(version: 20141116172705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,12 @@ ActiveRecord::Schema.define(version: 20141104064150) do
     t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "wall_id"
   end
 
   add_index "comments", ["photo_id"], name: "index_comments_on_photo_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["wall_id"], name: "index_comments_on_wall_id", using: :btree
 
   create_table "identities", force: true do |t|
     t.integer  "user_id"
@@ -70,10 +72,12 @@ ActiveRecord::Schema.define(version: 20141104064150) do
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "wall_id"
   end
 
   add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+  add_index "photos", ["wall_id"], name: "index_photos_on_wall_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
@@ -91,7 +95,7 @@ ActiveRecord::Schema.define(version: 20141104064150) do
     t.string   "login"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "birthday"
+    t.datetime "birthday"
     t.boolean  "admin",                  default: false
     t.string   "locale"
     t.string   "avatar"
@@ -114,5 +118,13 @@ ActiveRecord::Schema.define(version: 20141104064150) do
 
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+
+  create_table "walls", force: true do |t|
+    t.text     "body"
+    t.integer  "owner_id"
+    t.integer  "sender_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

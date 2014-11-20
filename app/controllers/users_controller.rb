@@ -7,6 +7,11 @@ class UsersController < ApplicationController
     @users = @search.result
   end
 
+  def show
+    @wall = Wall.new(owner: @user)
+    logger.debug "New wall in user: #{@wall.attributes.inspect}"
+  end
+
   def update
     @user.update(user_params)
     respond_with(@user)

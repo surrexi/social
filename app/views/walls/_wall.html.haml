@@ -1,0 +1,9 @@
+%p.text-right
+  = link_to '', user_wall_path(wall.owner, wall), method: :delete, class: 'glyphicon glyphicon-remove'
+%blockquote
+  = wall.body
+  %footer
+    = link_to wall.sender.login || wall.sender.email, wall.sender
+    %br
+    = time_ago_in_words(wall.created_at)
+    = t 'ago'

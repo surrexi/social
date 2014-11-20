@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20141116172705) do
     t.string   "login"
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "birthday"
+    t.date     "birthday"
     t.boolean  "admin",                  default: false
     t.string   "locale"
     t.string   "avatar"

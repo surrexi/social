@@ -21,6 +21,8 @@
         = t '.birthday'
       %i
         = @user.birthday
+    = render 'walls/form'
+    = render @user.received
   .col-md-5.col-xs-6
     - unless @user.albums.empty?
       %h3

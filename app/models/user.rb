@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :albums, dependent: :destroy
   has_many :photos, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_many :sent, class_name: 'Post', foreign_key: 'sender_id'
   has_many :identities, dependent: :destroy
 

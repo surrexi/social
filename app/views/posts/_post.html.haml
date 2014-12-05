@@ -1,0 +1,10 @@
+%div{ id: "post_#{post.id}" }
+  %p.text-right
+    = link_to '', post, method: :delete, class: 'glyphicon glyphicon-remove', remote: true
+  %blockquote
+    = post.body
+    %footer
+      = link_to post.sender.login || post.sender.email, post.sender
+      %br
+      = post.created_at
+      = t 'ago'

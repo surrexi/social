@@ -6,4 +6,4 @@ $ ->
       $(this).find('textarea').val("")
       $('comments').append(xhr.responseText)
     .on 'ajax:success', '.glyphicon.glyphicon-remove', (e, data, status, xhr) ->
-      $("##{data.id}").slideUp()
+      $("#comment_#{data.id}").slideUp()

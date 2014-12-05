@@ -21,6 +21,11 @@
         = t '.birthday'
       %i
         = @user.birthday
+    = render 'posts/form'
+    %h1 Стена
+    %posts
+      = render @user.posts
+
   .col-md-5.col-xs-6
     - unless @user.albums.empty?
       %h3

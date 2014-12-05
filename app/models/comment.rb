@@ -4,6 +4,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :photo
+  belongs_to :post
   validates :body, presence: true
   after_commit :send_notification, on: :create
 

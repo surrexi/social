@@ -6,5 +6,11 @@
     %footer
       = link_to post.sender.login || post.sender.email, post.sender
       %br
-      = post.created_at
+      = time_ago_in_words(post.created_at)
       = t 'ago'
+      - @post = post
+  Комментарии:
+  %comments
+    = render @post.comments
+
+  = render 'comments/form'

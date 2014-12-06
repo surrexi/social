@@ -1,5 +1,9 @@
-= form_for(@photo.comments.build, remote: true) do |f|
+- object = @photo || @post
+= form_for(object.comments.build, remote: true) do |f|
   = f.text_area :body, class: 'form-control', placeholder: t('comment')
-  = f.hidden_field(:photo_id, value: @photo.id)
+  - unless @photo.nil?
+    = f.hidden_field(:photo_id, value: @photo.id)
+  - unless @post.nil?
+    = f.hidden_field(:post_id, value: @post.id)
   %p.text-right
     = f.submit t('create'), class: 'btn btn-default'

@@ -12,5 +12,6 @@
   Комментарии:
   %comments
     = render @post.comments
-
-  = render 'comments/form'
+  = link_to 'Комментировать', '#', class: 'extremum-click'
+  .extremum-slide
+    = render 'comments/form'

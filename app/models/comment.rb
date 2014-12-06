@@ -3,8 +3,7 @@ class Comment < ActiveRecord::Base
   tracked owner: -> (controller, _model) { controller.current_user }
 
   belongs_to :user
-  belongs_to :photo
-  belongs_to :post
+  belongs_to :commentable, polymorphic: true
   validates :body, presence: true
   after_commit :send_notification, on: :create
 

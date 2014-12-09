@@ -5,6 +5,11 @@
 .row
   .col-md-3.col-xs-6
     = image_tag(@user.avatar_url, width: 300, class: 'img-thumbnail')
+    %p
+    - if can? :manage, @user
+      = link_to t('update'), edit_user_path(@user), class: 'btn btn-default'
+      = link_to t('delete'), @user, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }
+
   .col-md-4.col-xs-6
     %h4
       %strong
@@ -21,8 +26,12 @@
         = t '.birthday'
       %i
         = @user.birthday
+    %hr
+    %h2
+      %small
+        = "(количество записей: #{@user.posts.count})"
+    %hr
     = render 'posts/form'
-    %h1 Стена
     %posts
       = render @user.posts
 
@@ -42,7 +51,3 @@
       %hr
       - if can? :manage, @user
         = link_to t('.new_album'), new_album_path, class: 'btn btn-default'
-%p
-- if can? :manage, @user
-  = link_to t('update'), edit_user_path(@user), class: 'btn btn-default'
-  = link_to t('delete'), @user, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }

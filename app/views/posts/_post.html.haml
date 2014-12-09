@@ -1,17 +1,18 @@
-%div{ id: "post_#{post.id}" }
+- id = post.id
+%div{ id: "post_#{id}" }
   %p.text-right
     = link_to '', post, method: :delete, class: 'glyphicon glyphicon-remove', remote: true
   %blockquote
     = post.body
     %footer
-      = link_to post.sender.login || post.sender.email, post.sender
+      = link_to post.sender.user_name, post.sender
       %br
       = time_ago_in_words(post.created_at)
       = t 'ago'
       - @post = post
   Комментарии:
-  %comments
+  .comments{ 'data-id' =>  id}
     = render @post.comments
-  = link_to 'Комментировать', '#', class: 'extremum-click'
-  .extremum-slide
+  = link_to 'Комментировать', '', remote: true, class: 'extremum-click', 'data-form-id' => id
+  .comment_form{ 'data-id' => id, style: 'display:none;' }
     = render 'comments/form'

@@ -1,2 +1,6 @@
 = t '.title'
-= link_to t('.name'), album_photo_path(activity.trackable.photo.album, activity.trackable.photo)
+- object = activity.trackable.commentable
+- if (object.class.name == 'Post')
+  = link_to t('.post'), user_path(object.user)
+- else
+  = link_to t('.photo'), album_photo_path(object.album, object)

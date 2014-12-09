@@ -13,7 +13,7 @@ describe "the process commented" do
   let!(:user1) { create :user }
   let!(:user2) { create :user }
   let!(:photo) { create :photo }
-  let!(:comment) { create :comment, commentable_id: photo.id, user: user2 }
+  let!(:comment) { create :comment, commentable: photo, user: user2 }
 
   it "create" do
     create_comment user1, photo

@@ -80,9 +80,10 @@ ru:
   public_activity:
     comment:
       create:
-        title: прокомментровал эту
-        name: фотографию
+        title: прокомментровал(а) эту
+        photo: фотографию
+        post: запись на вашей стене
     photo:
       create:
-        title: добавил новую
+        title: добавил(а) новую
         name: фотографию

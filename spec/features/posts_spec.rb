@@ -3,7 +3,7 @@ require "spec_helper"
 describe "the publishing process" do
   let!(:user1) { create :user }
   let!(:user2) { create :user }
-  let!(:post) { create :post, user: user1, sender_id: user2.id }
+  let!(:post) { create :post, user: user1, sender: user2 }
 
   it "create" do
     auth user2
@@ -18,7 +18,6 @@ describe "the publishing process" do
   it "delete post" do
     auth user2
     visit user_path user1
-    save_and_open_page
     find('.glyphicon.glyphicon-remove').click
     expect(page).not_to have_content 'Hi, friend'
   end

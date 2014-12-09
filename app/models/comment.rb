@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   include PublicActivity::Model
-  tracked owner: -> (controller, _model) { controller.current_user }
+  tracked owner: -> (controller, _model) { controller.current_user }, recipient: :commentable
 
   belongs_to :user
   belongs_to :commentable, polymorphic: true

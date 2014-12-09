@@ -10,7 +10,7 @@
       .badge
         = @photo.get_likes.size
 
-  %comments
+  .comments{ 'data-id' =>  @photo.id}
     = render @photo.comments
   .col-md-10.col-md-offset-1
     %p

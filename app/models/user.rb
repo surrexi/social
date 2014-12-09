@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
     identity.update(user: user)
     user
   end
+
+  def user_name
+    login || email
+  end
 end

@@ -1,43 +1,47 @@
-.page-header
-  %h1
-    = @user.first_name
-    = @user.last_name
-.row
-  .col-md-3.col-xs-6
-    = image_tag(@user.avatar_url, width: 300, class: 'img-thumbnail')
-  .col-md-4.col-xs-6
-    %h4
-      %strong
-        = t '.login'
-      %i
-        = @user.login
-    %h4
-      %strong
-        = t '.email'
-      %i
-        = @user.email
-    %h4
-      %strong
-        = t '.birthday'
-      %i
-        = @user.birthday
-  .col-md-5.col-xs-6
-    - unless @user.albums.empty?
-      %h3
-        = t '.list_albums'
+.panel.panel-info
+  .panel-heading
+    %h2
+      = @user.first_name
+      = @user.last_name
+  .panel-body
+    .row
+      .col-md-4
+        = image_tag(@user.avatar_url, width: 300, class: 'img-thumbnail')
+        %p
+        - if can? :manage, @user
+          = link_to t('update'), edit_user_path(@user), class: 'btn btn-default'
+          = link_to t('delete'), @user, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }
+        %p
+          - unless @user.albums.empty?
+            .panel.panel-default
+              .panel-heading
+                = t '.list_albums'
+              .panel-body
+                - if can? :manage, @user
+                  = link_to t('.new_album'), new_album_path
+                  %hr
+                - @user.albums.each do |album|
+                  = link_to album.title, album_path(album)
+                  %p.text-right
+                    - if can? :manage, album
+                      = link_to t('edit'), edit_album_path(album), class: 'btn btn-default'
+                      = link_to t('delete'), album, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
+      .col-md-8
+        %h4
+          .col-md-5
+            %p= t '.login'
+            %p= t '.email'
+            %p= t '.birthday'
+            %hr
+          .col-md-7
+            %p.text-muted
+              = @user.login
+            %p.text-muted
+              = @user.email
+            %p.text-muted
+              = @user.birthday
+            %hr
+        = render 'posts/form'
         %hr
-        - @user.albums.each do |album|
-          = link_to album.title, album_path(album)
-          %small
-            = album.description
-            %p.text-right
-              - if can? :manage, album
-                = link_to t('edit'), edit_album_path(album), class: 'btn btn-default'
-                = link_to t('delete'), album, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default'
-      %hr
-      - if can? :manage, @user
-        = link_to t('.new_album'), new_album_path, class: 'btn btn-default'
-%p
-- if can? :manage, @user
-  = link_to t('update'), edit_user_path(@user), class: 'btn btn-default'
-  = link_to t('delete'), @user, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }
+        %posts
+          = render @user.posts

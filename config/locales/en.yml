@@ -12,13 +12,17 @@ en:
   edit: Edit
   delete: Delete
   download: Download
-  create: Сreate
+  create: Create
   comment: "Commented ..."
+  news: News
+  post: "Write something ..."
+  ago: ago
   welcome:
     index:
       title: "This is social network"
   users:
     index:
+      email: Email
       title: Listing users
       search: Search
       login: Nick
@@ -27,11 +31,13 @@ en:
       birthday: Birthday
     show:
       title: Profile
+      login: "Nickname:"
       surname: 'Surname:'
       name: 'Name:'
       birthday: 'Birthday:'
       email: "Email:"
       list_albums: Listing albums
+      new_album: New album
     edit:
       title: "Update profile:"
       login: Nick
@@ -41,14 +47,19 @@ en:
       locale: Select interface language
       remove_avatar: Remove avatar
   albums:
+    form:
+      name: Title album
+      description: Description
     index:
       title: Albums list
       name: Title
       description: Description
+      new_album: New album
     show:
-      title: Просмотр альбома
+      title: Show album
       name: Title
       description: Description
+      add_photo: Add photo
     edit:
       title: Editing album
       name: Title
@@ -72,8 +83,12 @@ en:
     comment:
       create:
         title: commented on his
-        name: photo
+        photo: photo
+        post: post on wall
     photo:
       create:
         title: created a new
         name: photo
+  posts:
+    post:
+      commented: Commented

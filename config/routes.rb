@@ -4,13 +4,14 @@ Rails.application.routes.draw do
   controllers: { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users
   resources :activities
+  resources :comments, only: [:create, :destroy]
+  resources :posts
 
   resources :albums do
     resources :photos do
       member do
         put "vote", to: "photos#vote"
       end
-      resources :comments, only: [:create, :destroy]
     end
   end
 

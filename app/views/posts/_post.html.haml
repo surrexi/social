@@ -1,0 +1,30 @@
+- id = post.id
+- @post = post
+.post{ 'data-id' => id }
+  - if can? :manage, post
+    .text-right
+      = link_to '', post, method: :delete, class: 'glyphicon glyphicon-remove', remote: true
+  .well.well-sm
+    .row
+      .col-md-2
+        = link_to image_tag(post.sender.avatar_url, width: 70, class: 'img-thumbnail'), post.sender
+      .col-md-10
+        %h4
+          = link_to post.sender.user_name, post.sender
+          %br
+          %small
+            = time_ago_in_words(post.created_at)
+            = t 'ago'
+    %hr
+    .row
+      .col-md-10.col-md-push-1
+        %h4.text-muted
+          = post.body
+    .text-right
+      = link_to t('.commented'), '#', remote: true, class: 'extremum-click', 'data-form-id' => id
+  .row
+    .col-md-10.col-md-push-1
+      .comments{ 'data-id' => id}
+        = render post.comments
+      .comment_form{ 'data-id' => id }
+        = render 'comments/form'

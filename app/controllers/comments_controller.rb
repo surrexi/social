@@ -1,9 +1,8 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource :photo
-  load_and_authorize_resource :comment
+  load_and_authorize_resource
 
   def create
-    @comment = @photo.comments.create(comment_params.merge(user: current_user))
+    @comment = Comment.create(comment_params.merge(user: current_user))
     render @comment
   end
 
@@ -15,6 +14,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :commentable_id, :commentable_type)
   end
 end

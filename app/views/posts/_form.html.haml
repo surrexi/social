@@ -1,5 +1,5 @@
 = form_for(@user.senders.build, remote: true) do |f|
-  = f.text_area :body, class: 'form-control', placeholder: t('comment')
+  = f.text_area :body, class: 'form-control', placeholder: t('post'), rows: 3
   = f.hidden_field(:user_id, value: @user.id)
   %p.text-right
-    = f.submit t('create'), class: 'btn btn-default'
+    = f.submit t('create'), class: 'btn btn-primary'

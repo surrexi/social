@@ -7,4 +7,4 @@ $ ->
       id = $(this).data('objectId')
       $(".comments[data-id = #{id}]").append(xhr.responseText)
     .on 'ajax:success', '.glyphicon.glyphicon-remove', (e, data, status, xhr) ->
-      $("#comment_#{data.id}").slideUp()
+      $(".comment[data-id = #{data.id}]").slideUp()

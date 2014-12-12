@@ -6,7 +6,13 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    .container
-      = render 'layouts/header'
-      .container
-        = yield
+    .container-fluid
+      .row
+        .col-md-10.col-md-push-1
+          = render 'layouts/header'
+          .row
+            .col-md-2
+              - if user_signed_in?
+                = render 'layouts/sidebar'
+            .col-md-10
+              = yield

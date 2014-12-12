@@ -1,8 +1,9 @@
 ru:
   home: Главная
   members: Пользователи
-  galleries: Альбомы
-  profile: Профиль
+  news: Новости
+  galleries: Мои альбомы
+  profile: Мой профиль
   login: Войти
   logout: Выйти
   register: Регистрация
@@ -14,6 +15,7 @@ ru:
   download: Загрузить
   create: Отправить
   comment: "Комментировать ..."
+  post: "Напишите что-нибудь ..."
   ago: "назад"
   welcome:
     index:
@@ -28,7 +30,7 @@ ru:
       name: Имя
       birthday: Дата рождения
     show:
-      title: "Профиль"
+      title: Профиль
       login: "Никнейм:"
       surname: "Фамилия:"
       name: "Имя:"
@@ -82,8 +84,11 @@ ru:
       create:
         title: прокомментровал(а) эту
         photo: фотографию
-        post: запись на вашей стене
+        post: запись на стене
     photo:
       create:
         title: добавил(а) новую
         name: фотографию
+  posts:
+    post:
+      commented: Комментировать

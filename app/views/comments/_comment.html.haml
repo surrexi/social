@@ -1,4 +1,4 @@
-%div{ id: "comment_#{comment.id}" }
+.comment{ 'data-id' => comment.id }
   - if can? :manage, comment
     %p.text-right
       = link_to '', comment, method: :delete, class: 'glyphicon glyphicon-remove', remote: true
